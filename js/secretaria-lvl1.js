@@ -173,9 +173,9 @@ class MapModel {
 
         // Parte izquierda 
         this.fill(33,19,45,27,T.SECRETARIA);
-        this.fill(36,0,45,18,T.OFICTICS);
+        this.fill(37,0,45,18,T.OFICTICS);
 
-        this.fill(29,0,29,11,T.CONTABILIDAD);
+        this.fill(25,0,36,18,T.CONTABILIDAD);
 
         // Parte Derecha
         this.fill(33,37,39,49,T.SALA1);
@@ -192,8 +192,8 @@ class MapModel {
         this.lbl(18,4,'Sala 3',18,true);
         this.lbl(18,27,'Sala 2',18,true);
 
-        this.lbl(26,6,'Preceptoria 1',18,true);
-        this.lbl(26,26,'Contabilidad',18,true);
+        this.lbl(22,32,'Preceptoria 1',20,true);
+        this.lbl(31,9,'Contabilidad',22,true);
 
         this.lbl(41,9,'Oficina TICS',20,true);
         this.lbl(36,44,'Sala 1',18,true);
