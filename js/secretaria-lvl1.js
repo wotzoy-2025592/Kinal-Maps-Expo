@@ -57,7 +57,7 @@ fill(0, 26, ROWS -1, 27, T.PASILLO);
 
 fill(2,24,5,29,T.SECRETARIA);
 
-fill(6,22,9,29,T.OFICINA);
+fill(6,42,9,29,T.OFICINA);
 
 fill(6,30,9,38,T.SALA1);
 
@@ -163,20 +163,21 @@ class MapModel {
         this.fill(0,19,7,33,T.CAPILLA);
 
         this.fill(8,0,15,11,T.ENTCAPILLA);
-        this.fill(8,19,15,33,T.OFICINA);
         this.fill(8,19,15,33,T.AUDITORIODIVER);
 
         // Zona media
-        this.fill(38,3,43,8,T.ENTRADA);
+        this.fill(25,19,45,41,T.ENTRADA);
+
+        // Parte superior (evitando superposición de zona media)
+        this.fill(25,37,32,49,T.OFICINA);
 
         // Parte izquierda 
-        this.fill(22,0,29,11,T.SECRETARIA);
-        this.fill(22,19,29,33,T.OFICTICS);
+        this.fill(33,19,45,27,T.SECRETARIA);
+        this.fill(37,0,45,18,T.OFICTICS);
 
-        this.fill(30,0,37,11,T.CONTABILIDAD);
+        this.fill(25,0,36,18,T.CONTABILIDAD);
 
         // Parte Derecha
-        this.fill(33,19,45,27,T.SECRETARIA);
         this.fill(33,37,39,49,T.SALA1);
         this.fill(40,42,45,50,T.BATH);
     }
@@ -191,18 +192,18 @@ class MapModel {
         this.lbl(18,4,'Sala 3',18,true);
         this.lbl(18,27,'Sala 2',18,true);
 
-        this.lbl(26,6,'Preceptoria 1',18,true);
-        this.lbl(26,26,'Contabilidad',18,true);
+        this.lbl(22,32,'Preceptoria 1',20,true);
+        this.lbl(31,9,'Contabilidad',22,true);
 
-        this.lbl(34,6,'Oficina TICS',18,true);
+        this.lbl(41,9,'Oficina TICS',20,true);
         this.lbl(36,44,'Sala 1',18,true);
 
         this.lbl(18,17,'Pasillo',18,true);
 
-        this.lbl(42,8,'Oficina',12,true);
+        this.lbl(29,44,'Oficina',20,true);
 
         this.lbl(40,24,'Secretaria',18,true);
-        this.lbl(42,26,'Entrada',18,true);
+        this.lbl(40,32,'Entrada',20,true);
         this.lbl(43,46,'Baño Visitas',18,true);
     }
 
