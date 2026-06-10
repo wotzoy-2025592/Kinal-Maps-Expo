@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinal Street View</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/basicos.css">
+
+</head>
+<body>
+
+    <div id="map-wrap">
+        
+        <div id="header-mapa">
+            <h1><i class="bi bi-geo-alt-fill text-danger"></i> Kinal Maps</h1>
+            <p>Usa las flechas para explorar e interactuar con el entorno</p>
+        </div>
+        
+        <img id="lienzo-imagen" src="Basicos/pasillos/pasillo_inicial.png" class="imagen-entorno-fullscreen" alt="Vista Kinal">
+
+        <div class="capa-interactiva">
+            
+            <div data-nodo="1" class="hotspot activo" style="top: 70%; left: 50%;">
+                <button onclick="cambiarNodo(2)" class="btn-flecha-maps" title="Avanzar a las gradas"><i class="bi bi-arrow-up"></i></button>
+            </div>
+            <div data-nodo="1" class="hotspot activo" style="top: 65%; left: 20%;">
+                <button onclick="cambiarNodo(5)" class="btn-flecha-maps" title="Ir a Coordinación"><i class="bi bi-arrow-left"></i></button>
+            </div>
+            <div data-nodo="1" class="hotspot activo" style="top: 75%; left: 80%;">
+                <button onclick="cambiarNodo(10)" class="btn-flecha-maps" title="Salir al Parqueo"><i class="bi bi-arrow-right"></i></button>
+            </div>
+
+            <div data-nodo="2" class="hotspot" style="top: 45%; left: 40%;">
+                <button onclick="abrirPanelFlotante('Módulo de Gradas', 'CONEXIÓN B', 'Gradas principales de acceso arquitectónico hacia los laboratorios tecnológicos del segundo nivel.')" class="btn-marcador-info"><i class="bi bi-info-circle-fill"></i> VER DETALLES DE GRADAS</button>
+            </div>
+            <div data-nodo="2" class="hotspot" style="top: 70%; left: 60%;">
+                <button onclick="cambiarNodo(3)" class="btn-flecha-maps" title="Ir al pasillo de salones"><i class="bi bi-arrow-right"></i></button>
+            </div>
+            <div data-nodo="2" class="hotspot" style="top: 85%; left: 50%;">
+                <button onclick="cambiarNodo(1)" class="btn-flecha-maps" title="Regresar al pasillo inicial"><i class="bi bi-arrow-down"></i></button>
+            </div>
+
+            <div data-nodo="3" class="hotspot" style="top: 45%; left: 55%;">
+                <button onclick="abrirPanelFlotante('Pasillo de Aulas Académicas', 'ZONA CENTRAL', 'Área perimetral destinada al desarrollo de salones teóricos y laboratorios de informática.')" class="btn-marcador-info"><i class="bi bi-info-circle-fill"></i> EXAMINAR AULAS</button>
+            </div>
+            <div data-nodo="3" class="hotspot" style="top: 60%; left: 75%;">
+                <button onclick="cambiarNodo(7)" class="btn-flecha-maps" title="Entrar al Laboratorio"><i class="bi bi-door-open-fill"></i></button>
+            </div>
+            <div data-nodo="3" class="hotspot" style="top: 70%; left: 50%;">
+                <button onclick="cambiarNodo(4)" class="btn-flecha-maps" title="Caminar hacia el balcón"><i class="bi bi-arrow-up"></i></button>
+            </div>
+            <div data-nodo="3" class="hotspot" style="top: 85%; left: 50%;">
+                <button onclick="cambiarNodo(2)" class="btn-flecha-maps" title="Regresar a las gradas"><i class="bi bi-arrow-down"></i></button>
+            </div>
+
+            <div data-nodo="4" class="hotspot" style="top: 45%; left: 62%;">
+                <button onclick="abrirPanelFlotante('Área del Balcón Abierto', 'NIVEL 1', 'Espacio abierto de descanso con vista directa al patio central.')" class="btn-marcador-info"><i class="bi bi-eye-fill"></i> OBSERVACIÓN BALCÓN</button>
+            </div>
+            <div data-nodo="4" class="hotspot" style="top: 70%; left: 25%;">
+                <button onclick="cambiarNodo(8)" class="btn-flecha-maps" title="Bajar a la Cafetería"><i class="bi bi-arrow-left"></i> Cafetería</button>
+            </div>
+            <div data-nodo="4" class="hotspot" style="top: 85%; left: 50%;">
+                <button onclick="cambiarNodo(3)" class="btn-flecha-maps" title="Regresar al pasillo de salones"><i class="bi bi-arrow-down"></i></button>
+            </div>
+
+            <div data-nodo="5" class="hotspot" style="top: 60%; left: 50%;">
+                <button onclick="cambiarNodo(6)" class="btn-flecha-maps" title="Acercarse a la puerta de Coordinación"><i class="bi bi-arrow-up"></i></button>
+            </div>
+            <div data-nodo="5" class="hotspot" style="top: 65%; left: 15%;">
+                <button onclick="cambiarNodo(9)" class="btn-flecha-maps" title="Ir a los Baños"><i class="bi bi-arrow-left"></i> Baños</button>
+            </div>
+            <div data-nodo="5" class="hotspot" style="top: 85%; left: 50%;">
+                <button onclick="cambiarNodo(1)" class="btn-flecha-maps" title="Regresar al pasillo inicial"><i class="bi bi-arrow-down"></i></button>
+            </div>
+
+            <div data-nodo="6" class="hotspot" style="top: 45%; left: 50%;">
+                <button onclick="abrirPanelFlotante('Oficina de Coordinación', 'CONTROL', 'Entrada directa a las oficinas de control académico y atención al estudiante.')" class="btn-marcador-info"><i class="bi bi-door-closed-fill"></i> DETALLES DE OFICINA</button>
+            </div>
+            <div data-nodo="6" class="hotspot" style="top: 45%; left: 80%;">
+                <button onclick="cambiarNodo(11)" class="btn-flecha-maps" title="Ir a Dirección"><i class="bi bi-arrow-right"></i> Dirección</button>
+            </div>
+            <div data-nodo="6" class="hotspot" style="top: 85%; left: 50%;">
+                <button onclick="cambiarNodo(5)" class="btn-flecha-maps" title="Dar un paso atrás"><i class="bi bi-arrow-down"></i></button>
+            </div>
+
+            <div data-nodo="7" class="hotspot" style="top: 50%; left: 50%;">
+                <button onclick="abrirPanelFlotante('Laboratorio Tecnológico', 'COMPUTO', 'Equipado con estaciones de trabajo de última generación para desarrollo de software.')" class="btn-marcador-info"><i class="bi bi-pc-display"></i> INFO DEL LAB</button>
+            </div>
+            <div data-nodo="7" class="hotspot" style="top: 85%; left: 50%;">
+                <button onclick="cambiarNodo(3)" class="btn-flecha-maps" title="Salir al pasillo de salones"><i class="bi bi-arrow-down"></i> Salir del Lab</button>
+            </div>
+
+            <div data-nodo="8" class="hotspot" style="top: 50%; left: 50%;">
+                <button onclick="abrirPanelFlotante('Cafetería Institucional', 'RECREACIÓN', 'Área de comida y convivencia para la comunidad educativa de la institución.')" class="btn-marcador-info"><i class="bi bi-cup-hot-fill"></i> VER MENÚ</button>
+            </div>
+            <div data-nodo="8" class="hotspot" style="top: 85%; left: 50%;">
+                <button onclick="cambiarNodo(4)" class="btn-flecha-maps" title="Subir de vuelta al balcón"><i class="bi bi-arrow-up"></i> Volver al Balcón</button>
+            </div>
+
+            <div data-nodo="9" class="hotspot" style="top: 85%; left: 50%;">
+                <button onclick="cambiarNodo(5)" class="btn-flecha-maps" title="Regresar al pasillo de coordinación"><i class="bi bi-arrow-down"></i> Volver a Coordinación</button>
+            </div>
+
+            <div data-nodo="10" class="hotspot" style="top: 50%; left: 50%;">
+                <button onclick="abrirPanelFlotante('Estacionamiento', 'EXTERIOR', 'Parqueo interno controlado asignado para las visitas autorizadas.')" class="btn-marcador-info"><i class="bi bi-p-circle-fill"></i> REGLAS DE PARQUEO</button>
+            </div>
+            <div data-nodo="10" class="hotspot" style="top: 85%; left: 50%;">
+                <button onclick="cambiarNodo(1)" class="btn-flecha-maps" title="Entrar al pasillo inicial"><i class="bi bi-arrow-left"></i> Entrar a los Pasillos</button>
+            </div>
+
+            <div data-nodo="11" class="hotspot" style="top: 50%; left: 50%;">
+                <button onclick="abrirPanelFlotante('Dirección General', 'ADMINISTRACIÓN', 'Oficina central administrativa del centro educativo.')" class="btn-marcador-info"><i class="bi bi-person-workspace"></i> VER HORARIOS</button>
+            </div>
+            <div data-nodo="11" class="hotspot" style="top: 85%; left: 50%;">
+                <button onclick="cambiarNodo(6)" class="btn-flecha-maps" title="Regresar a la puerta de Coordinación"><i class="bi bi-arrow-left"></i> Volver</button>
+            </div>
+
+        </div>
+
+        <div id="entry-panel">
+            <div id="ep-txt-titulo" class="ep-title">Lugar</div>
+            <div id="ep-txt-badge" class="ep-badge">Categoría</div>
+            <div id="ep-txt-descripcion" class="ep-desc">Descripción detallada del punto.</div>
+            <button id="entry-go-btn" class="btn btn-dark btn-sm w-100 mt-2" onclick="cerrarPanelFlotante()">ENTENDIDO / CERRAR</button>
+        </div>
+
+        <div id="indicador-entorno">Entorno: <span id="nombre-lugar-actual" class="text-info fw-bold">Pasillo Inicial</span></div>
+
+    </div>
+
+    <script src="js/pasillosBasicos.js"></script>
+
+</body>
+</html>
