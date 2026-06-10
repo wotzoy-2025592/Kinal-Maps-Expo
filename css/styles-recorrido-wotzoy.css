@@ -1,0 +1,162 @@
+*, *::before, *::after { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body {
+    background-color: #111;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+}
+
+#map-wrap {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: #000;
+}
+
+/* Contenedor principal de Pannellum */
+#panorama-viewer {
+    width: 100%;
+    height: 100%;
+}
+
+#header-mapa {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+#header-mapa h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+#header-mapa p {
+    font-size: 11px;
+    opacity: 0.8;
+}
+
+/* Panel de Información */
+#entry-panel {
+    position: absolute;
+    bottom: 40px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 450px;
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 14px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.8);
+    z-index: 200;
+    padding: 20px;
+    display: none;
+    color: white;
+}
+#entry-panel.visible { 
+    display: block; 
+}
+.ep-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #7ab8d8;
+    margin-bottom: 4px;
+}
+.ep-badge {
+    font-size: 10px;
+    background: #c0392b;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.ep-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #eee;
+    margin-bottom: 16px;
+}
+#entry-go-btn {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#entry-go-btn:hover { 
+    background: rgba(255,255,255,0.3); 
+}
+
+#indicador-entorno {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 100;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+#nombre-lugar-actual {
+    color: #5bc0de;
+    font-weight: bold;
+}
+
+/* Custom Hotspots dentro de Pannellum (Reemplazo de tus clases de flechas) */
+.custom-hotspot-arrow {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.4) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/></svg>') no-repeat center;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: transform 0.2s;
+}
+.custom-hotspot-arrow:hover {
+    transform: scale(1.2);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.custom-hotspot-info {
+    width: 35px;
+    height: 35px;
+    background: #2a6496 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 16 16"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>') no-repeat center;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(42, 100, 150, 0.6);
+    transition: transform 0.2s;
+}
+.custom-hotspot-info:hover {
+    transform: scale(1.2);
+    background-color: #3278b0;
+}
