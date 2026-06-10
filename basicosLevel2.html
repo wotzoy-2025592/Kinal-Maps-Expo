@@ -10,9 +10,6 @@
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════════════════════
-     HEADER
-     ══════════════════════════════════════════════════════════ -->
 <header id="header">
   <div class="logo">Kinal <span>Maps</span></div>
   <div class="separador"></div>
@@ -34,9 +31,6 @@
   </div>
 </header>
 
-<!-- ══════════════════════════════════════════════════════════
-     MAIN
-     ══════════════════════════════════════════════════════════ -->
 <main id="main">
   <div id="sidebar">
     <section class="panel-section">
@@ -83,25 +77,18 @@
       </div>
     </section>
 
-  </div><!-- /sidebar -->
+  </div>
 
-  <!-- ── Área del mapa ── -->
   <div id="map-wrap">
 
-    <!-- Botón acceso rápido -->
     <button id="ver-entrada-btn">
       <span class="dot"></span>Ver Entrada
     </button>
 
-    <!-- ════ CANVAS PRINCIPAL ════
-         width/height = tamaño interno real del mapa (1288×910).
-         CSS lo adapta al contenedor. El JS dibuja la imagen aquí.
-    ═══════════════════════════════ -->
     <div id="map-canvas-wrap">
       <canvas id="mapCanvas" width="1288" height="910"></canvas>
     </div>
 
-    <!-- Brújula -->
     <div id="compass">
       <svg viewBox="0 0 52 52" width="44" height="44" xmlns="http://www.w3.org/2000/svg">
         <circle cx="26" cy="26" r="24" fill="none" stroke="#c0b8a8" stroke-width="1"/>
@@ -143,7 +130,6 @@
       </div>
 
       <div id="entry-img-wrap">
-        <!-- Imagen del mapa usada también como referencia visual del panel -->
         <img src="img/Entrada_Basicos.png" alt="Vista del campus Kinal">
         <div class="img-overlay"></div>
         <div class="img-label">Vista aérea de Kinal</div>
@@ -180,9 +166,6 @@
 
 </main>
 
-<!-- ══════════════════════════════════════════════════════════
-     STATUS BAR
-     ══════════════════════════════════════════════════════════ -->
 <div id="status-bar">
   <div class="sb-item">ZOOM: <span id="sb-zoom">100%</span></div>
   <div class="sb-item">GRILLA: <span>106 × 75</span></div>
@@ -191,14 +174,6 @@
   <div class="sb-item" style="margin-left:auto">Instituto Kinal — Plano Campus · A* MVC v2.0</div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════
-     MÓDULOS JS  (type="module" para ES Modules)
-     Estructura MVC:
-       main_basicos2l.js       → inicialización
-       model_basicos2l.js      → grilla + A*
-       view_basicos2l.js       → canvas / render
-       controller_basicos2l.js → interacción UI
-     ══════════════════════════════════════════════════════════ -->
 <script type="module" src="js/main_basicos2l.js"></script>
 
 </body>
