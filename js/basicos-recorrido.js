@@ -67,7 +67,7 @@ const viewer = pannellum.viewer('panorama-viewer', {
         },
         "nodo3": {
             "title": "Pasillo de Salones",
-            "panorama": "img/Image 9.jpg",
+            "panorama": "img/efecto360.png",
             "hotSpots": [
                 {
                     "pitch": 0,
