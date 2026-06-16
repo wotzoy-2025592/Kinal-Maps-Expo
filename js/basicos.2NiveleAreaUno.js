@@ -1,6 +1,6 @@
 pannellum.viewer('panorama', {
     type: 'equirectangular', 
-    panorama: 'img/entradaBasicos2nivel.jpg', 
+    panorama: 'img/efecto360.png', 
     autoLoad: true, compass: true, 
     showZoomCtrl: true,
     showFullscreenCtrl: true, 

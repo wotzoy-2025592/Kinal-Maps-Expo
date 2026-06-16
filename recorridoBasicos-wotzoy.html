@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinal Street View 360</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+    <link rel="stylesheet" href="css/styles-recorrido-wotzoy.css">
+</head>
+<body>
+
+    <div id="map-wrap">
+        <div id="header-mapa">
+            <h1>Kinal Maps 360</h1>
+            <p>Arrastra para mirar alrededor y haz clic en los iconos para explorar</p>
+        </div>
+        
+        <div id="panorama-viewer"></div>
+
+        <div id="entry-panel">
+            <div id="ep-txt-titulo" class="ep-title">Lugar</div>
+            <div id="ep-txt-badge" class="ep-badge">Categoría</div>
+            <div id="ep-txt-descripcion" class="ep-desc">Descripción detallada del punto.</div>
+            <button id="entry-go-btn" onclick="cerrarPanelFlotante()">ENTENDIDO / CERRAR</button>
+        </div>
+
+        <div id="indicador-entorno">Entorno: <span id="nombre-lugar-actual">Pasillo Inicial</span></div>
+    </div>
+
+    <script src="js/basicos-recorrido.js"></script>
+</body>
+</html>
